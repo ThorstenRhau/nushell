@@ -1,11 +1,9 @@
-# Set required environment variables
 $env.STARSHIP_SHELL = "nu"
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash'
 $env.TERM = "wezterm"
 $env.LANG = "en_US.UTF-8"
 $env.LC_ALL = "en_US.UTF-8"
 
-# Adding to env.PATH
 $env.PATH = (
     $env.PATH
     | split row (char esep)
@@ -26,7 +24,6 @@ carapace _carapace nushell | save -f ~/.cache/carapace/init.nu
 starship init nu | save -f ~/.cache/starship/init.nu
 zoxide init nushell | save -f ~/.cache/zoxide/init.nu
 
-# Check if WezTerm directory exists and add to PATH if it does
 let wezterm_path = "/Applications/WezTerm.app/Contents/MacOS"
 if ($wezterm_path | path exists) {
     $env.PATH = ($env.PATH | append $wezterm_path)

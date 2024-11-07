@@ -1,11 +1,8 @@
-# Load starship theme
 use ~/.cache/starship/init.nu
 
-# Load carapace and zoxide
 source ~/.cache/carapace/init.nu
 source ~/.cache/zoxide/init.nu
 
-# Aliases
 alias nv = nvim
 alias gst = git status
 alias gl = git pull
@@ -29,7 +26,6 @@ alias ssh = with-env {TERM: xterm-256color} {
     ssh
 }
 
-# Set default environment variables
 $env.config = {
     show_banner: false
     ls: {
@@ -41,7 +37,7 @@ $env.config = {
     }
     table: {
         mode: rounded
-        index_mode: always
+        index_mode: auto
         trim: {
             methodology: wrapping
             wrapping_try_keep_words: true
@@ -50,13 +46,17 @@ $env.config = {
     history: {
         max_size: 10000
         sync_on_enter: true
-        file_format: "plaintext"
+        file_format: "sqlite"
     }
     completions: {
         case_sensitive: false
-        quick: true
+        quick: false
         partial: true
-        algorithm: "prefix"
+        algorithm: "fuzzy"
+        external: {
+            enable: true
+            max_results: 100
+        }
     }
 }
 
