@@ -1,3 +1,6 @@
 # macOS files created by Finder.app
 **/.DS_Store
 
+# Nushell history file
+history.txt
+
