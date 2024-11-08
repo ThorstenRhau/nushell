@@ -11,7 +11,7 @@ git clone git@github.com:ThorstenRhau/nushell.git ~/.config/nushell/
 ## Install dependencies
 
 ```shell
-brew install nushell carapace starship fish zoxide
+brew install nushell carapace starship fish zoxide vivid
 ```
 
 ```shell
