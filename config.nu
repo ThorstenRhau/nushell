@@ -56,16 +56,16 @@ let external_completer = {|spans|
     }
 
     match $spans.0 {
-        # carapace completions are incorrect for nu
-        nu => $fish_completer
-        # fish completes commits and branch names in a nicer way
-        git => $fish_completer
-        # carapace doesn't have completions for asdf
-        asdf => $fish_completer
-        # use zoxide completions for zoxide commands
-        __zoxide_z | __zoxide_zi => $zoxide_completer
-        _ => $carapace_completer
-    } | do $in $spans
+    # carapace completions are incorrect for nu
+    nu => $fish_completer
+    # fish completes commits and branch names in a nicer way
+    git => $fish_completer
+    # carapace doesn't have completions for asdf
+    asdf => $fish_completer
+    # use zoxide completions for zoxide commands
+    __zoxide_z | __zoxide_zi => $zoxide_completer
+    _ => $carapace_completer
+} | do $in $spans
 }
 
 $env.config = {
@@ -93,7 +93,7 @@ $env.config = {
     completions: {
         case_sensitive: false
         quick: false
-        partial: true
+        partial: false
         algorithm: "fuzzy"
         external: {
             enable: true
