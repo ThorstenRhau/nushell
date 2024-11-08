@@ -71,7 +71,7 @@ let external_completer = {|spans|
 $env.config = {
     show_banner: false
     ls: {
-        use_ls_colors: false
+        use_ls_colors: true
         clickable_links: true
     }
     rm: {
