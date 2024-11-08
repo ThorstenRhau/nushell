@@ -101,5 +101,17 @@ $env.config = {
             completer: $external_completer
         }
     }
+    hooks: {
+        pre_prompt: [
+            {
+                code: "update_ls_colors"
+            }
+        ]
+    }
 }
+
+
+
+
+
 
