@@ -30,3 +30,28 @@ if ($wezterm_path | path exists) {
     $env.PATH = ($env.PATH | append $wezterm_path)
 }
 
+def get_macos_theme [] {
+    let result = (defaults read -g AppleInterfaceStyle | complete)
+    if $result.exit_code == 0 and $result.stdout =~ 'Dark' {
+        'dark'
+    } else {
+        'light'
+    }
+}
+
+let theme = (get_macos_theme)
+if $theme == 'dark' {
+    $env.LS_COLORS = (vivid generate catppuccin-macchiato)
+} else {
+    $env.LS_COLORS = (vivid generate catppuccin-latte)
+}
+
+def update_ls_colors [] {
+    let theme = (get_macos_theme)
+    if $theme == 'dark' {
+        $env.LS_COLORS = (vivid generate catppuccin-macchiato)
+    } else {
+        $env.LS_COLORS = (vivid generate catppuccin-latte)
+    }
+}
+
