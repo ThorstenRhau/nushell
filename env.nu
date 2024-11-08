@@ -9,6 +9,7 @@ $env.PATH = (
     | split row (char esep)
     | prepend [
         ($env.HOME | path join "bin")
+        ($env.HOME | path join ".local/bin")
         "/opt/homebrew/bin"
         "/opt/homebrew/sbin"
         "/usr/local/bin"
