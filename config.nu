@@ -3,6 +3,8 @@ use ~/.cache/starship/init.nu
 source ~/.cache/carapace/init.nu
 source ~/.cache/zoxide/init.nu
 
+source ~/.nushell_secrets
+
 alias nv = nvim
 alias gst = git status
 alias gl = git pull
@@ -54,7 +56,6 @@ let external_completer = {|spans|
     } else {
         $spans
     }
-
     match $spans.0 {
     # carapace completions are incorrect for nu
     nu => $fish_completer
@@ -101,6 +102,18 @@ $env.config = {
             completer: $external_completer
         }
     }
+    keybindings: [
+        {
+            name: zoxide_jump
+            modifier: control
+            keycode: char_z
+            mode: [emacs vi_normal vi_insert]
+            event: {
+                send: executehostcommand
+                cmd: "zi"
+            }
+        }
+    ]
 }
 
 
