@@ -46,12 +46,3 @@ if $theme == 'dark' {
     $env.LS_COLORS = (vivid generate catppuccin-latte)
 }
 
-def update_ls_colors [] {
-    let theme = (get_macos_theme)
-    if $theme == 'dark' {
-        $env.LS_COLORS = (vivid generate catppuccin-macchiato)
-    } else {
-        $env.LS_COLORS = (vivid generate catppuccin-latte)
-    }
-}
-

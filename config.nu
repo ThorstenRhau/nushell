@@ -92,7 +92,7 @@ $env.config = {
     }
     completions: {
         case_sensitive: false
-        quick: false
+        quick: true
         partial: false
         algorithm: "fuzzy"
         external: {
@@ -100,13 +100,6 @@ $env.config = {
             max_results: 100
             completer: $external_completer
         }
-    }
-    hooks: {
-        pre_prompt: [
-            {
-                code: "update_ls_colors"
-            }
-        ]
     }
 }
 
