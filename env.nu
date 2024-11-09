@@ -59,7 +59,7 @@ def fuzzy_history [
         | fzf --scheme=history 
             --layout=reverse 
             --height=40% 
-            --prompt="HISTORY search> "
+            --prompt="CMD HISTORY> "
             --border='rounded'
     )
     commandline edit --insert $cmd
