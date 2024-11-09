@@ -57,7 +57,6 @@ def fuzzy_history [
         | reverse 
         | str join (char nl) 
         | fzf --scheme=history 
-            --layout=reverse 
             --height=40% 
             --prompt="CMD HISTORY> "
             --border='rounded'
