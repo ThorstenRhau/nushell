@@ -5,6 +5,11 @@ source ~/.cache/zoxide/init.nu
 
 source ~/.nushell_secrets
 
+def gpristine [] { 
+    git reset --hard
+    git clean --force -dfx
+}
+
 alias nv = nvim
 alias gst = git status
 alias gl = git pull
@@ -122,9 +127,3 @@ $env.config = {
         }
     ]
 }
-
-
-
-
-
-
