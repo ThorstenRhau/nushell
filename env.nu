@@ -46,3 +46,21 @@ if $theme == 'dark' {
     $env.LS_COLORS = (vivid generate catppuccin-latte)
 }
 
+
+def fuzzy_history [
+    --query (-q): string # Optional starting query
+] {
+    let cmd = (
+        history 
+        | get command 
+        | uniq 
+        | reverse 
+        | str join (char nl) 
+        | fzf --scheme=history 
+            --layout=reverse 
+            --height=40% 
+            --prompt="HISTORY search> "
+            --border='rounded'
+    )
+    commandline edit --insert $cmd
+}

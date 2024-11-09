@@ -113,6 +113,13 @@ $env.config = {
                 cmd: "zi"
             }
         }
+        {
+            name: fuzzy_history
+            modifier: control
+            keycode: char_r
+            mode: [emacs, vi_normal, vi_insert]
+            event: { send: executehostcommand, cmd: "fuzzy_history" }
+        }
     ]
 }
 
