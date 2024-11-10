@@ -4,6 +4,9 @@ $env.TERM = "wezterm"
 $env.LANG = "en_US.UTF-8"
 $env.LC_ALL = "en_US.UTF-8"
 
+# Disabling open-webui login from remote hosts
+$env.WEBUI_AUTH = "False"
+
 $env.PATH = (
     $env.PATH
     | split row (char esep)
