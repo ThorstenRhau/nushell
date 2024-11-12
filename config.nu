@@ -20,10 +20,6 @@ alias gca = git commit -a
 alias python = python3
 alias pip = pip3
 
-alias ssh = with-env {TERM: xterm-256color} {
-    ssh
-}
-
 let fish_completer = {|spans|
     fish --command $'complete "--do-complete=($spans | str join " ")"'
     | $"value(char tab)description(char newline)" + $in
