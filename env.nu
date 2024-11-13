@@ -12,7 +12,7 @@ $env.SCARF_NO_ANALYTICS = "True"
 $env.ENABLE_OLLAMA_API = "True"
 
 # Ollama environment variables
-$env.OLLAMA_BASE_URL = "http://localhost:11434"
+$env.OLLAMA_BASE_URL = "http://127.0.0.1:11434"
 $env.OLLAMA_HOST = "127.0.0.1"
 $env.OLLAMA_KEEP_ALIVE = "5m" # Time before unloading modules
 $env.OLLAMA_FLASH_ATTENTION = "1" # Optimization for Apple Silicon and Nvidia
