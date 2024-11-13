@@ -25,6 +25,7 @@ $env.PATH = (
     | prepend [
         ($env.HOME | path join "bin")
         ($env.HOME | path join ".local/bin")
+        ($env.HOME | path join ".rd/bin")
         "/opt/homebrew/bin"
         "/opt/homebrew/sbin"
         "/usr/local/bin"
