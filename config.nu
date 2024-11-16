@@ -57,6 +57,8 @@ let external_completer = {|spans|
     asdf => $fish_completer
     # use zoxide completions for zoxide commands
     __zoxide_z | __zoxide_zi => $zoxide_completer
+    # Prioritize zoxide_completer for these commands
+    cd | ls | nv | nvim | vim | rm  => $zoxide_completer
     _ => $carapace_completer
 } | do $in $spans
 }
