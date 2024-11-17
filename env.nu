@@ -11,6 +11,7 @@ $env.PATH = (
         ($env.HOME | path join "bin")
         ($env.HOME | path join ".local/bin")
         ($env.HOME | path join ".rd/bin")
+        ($env.HOME | path join ".cargo/bin")
         "/opt/homebrew/bin"
         "/opt/homebrew/sbin"
         "/usr/local/bin"
