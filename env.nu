@@ -14,6 +14,7 @@ $env.PATH = (
         "/opt/homebrew/bin"
         "/opt/homebrew/sbin"
         "/usr/local/bin"
+        "/Applications/WezTerm.app/Contents/MacOS"
     ]
     | each { |it| if ($it | path exists) { $it } else { null } }
     | compact
@@ -27,11 +28,6 @@ $env.HOMEBREW_NO_ANALYTICS = 1
 carapace _carapace nushell | save -f ~/.cache/carapace/init.nu
 starship init nu | save -f ~/.cache/starship/init.nu
 zoxide init nushell | save -f ~/.cache/zoxide/init.nu
-
-let wezterm_path = "/Applications/WezTerm.app/Contents/MacOS"
-if ($wezterm_path | path exists) {
-    $env.PATH = ($env.PATH | append $wezterm_path)
-}
 
 def get_macos_theme [] {
     let result = (defaults read -g AppleInterfaceStyle | complete)
