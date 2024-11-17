@@ -15,6 +15,8 @@ $env.PATH = (
         "/opt/homebrew/sbin"
         "/usr/local/bin"
     ]
+    | each { |it| if ($it | path exists) { $it } else { null } }
+    | compact
     | uniq
 )
 
