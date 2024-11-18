@@ -22,10 +22,6 @@ $env.PATH = (
     | uniq
 )
 
-if (which bat |is-not-empty) {
-    $env.BAT_THEME = "Catppuccin Latte"
-    $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
-}
 $env.EDITOR = "nvim"
 $env.HOMEBREW_PREFIX = "/opt/homebrew"
 $env.HOMEBREW_NO_ANALYTICS = 1
@@ -46,10 +42,17 @@ def get_macos_theme [] {
 let theme = (get_macos_theme)
 if $theme == 'dark' {
     $env.LS_COLORS = (vivid generate catppuccin-macchiato)
+    if (which bat |is-not-empty) {
+        $env.BAT_THEME = "Catppuccin Macchiato"
+        $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
+    }
 } else {
     $env.LS_COLORS = (vivid generate catppuccin-latte)
+    if (which bat |is-not-empty) {
+        $env.BAT_THEME = "Catppuccin Latte"
+        $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
+    }
 }
-
 
 def fuzzy_history [
     --query (-q): string # Optional starting query
