@@ -11,15 +11,6 @@ def gpristine [] {
     git clean --force -dfx
 }
 
-alias nv = nvim
-alias gst = git status
-alias gl = git pull
-alias gp = git push
-alias glog = git log --oneline --graph --decorate
-alias gca = git commit -a
-alias python = python3
-alias pip = pip3
-
 $env.config = {
     show_banner: false
     ls: {
