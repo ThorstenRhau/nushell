@@ -22,6 +22,10 @@ $env.PATH = (
     | uniq
 )
 
+if (which bat |is-not-empty) {
+    $env.BAT_THEME = "Catppuccin Latte"
+    $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
+}
 $env.EDITOR = "nvim"
 $env.HOMEBREW_PREFIX = "/opt/homebrew"
 $env.HOMEBREW_NO_ANALYTICS = 1
