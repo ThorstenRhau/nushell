@@ -4,6 +4,7 @@ $env.TERM = "wezterm"
 $env.LANG = "en_US.UTF-8"
 $env.LC_ALL = "en_US.UTF-8"
 $env.EDITOR = "nvim"
+$env.MANPAGER = "nvim +Man! -"
 $env.HOMEBREW_PREFIX = "/opt/homebrew"
 $env.HOMEBREW_NO_ANALYTICS = 1
 
@@ -28,11 +29,6 @@ $env.PATH = (
 carapace _carapace nushell | save -f ~/.cache/carapace/init.nu
 starship init nu | save -f ~/.cache/starship/init.nu
 zoxide init nushell | save -f ~/.cache/zoxide/init.nu
-
-if (which bat | is-not-empty) {
-    $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
-    alias fzf = fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"
-}
 
 alias nv = nvim
 alias gst = git status
